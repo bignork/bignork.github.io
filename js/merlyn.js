@@ -18,6 +18,9 @@ var hondaSound = new Howl({
 var kidsSound = new Howl({
   urls: ['audio/kids.mp3']
 });
+var neckSound = new Howl({
+  urls: ['audio/neck.mp3']
+})
 
 
   $( window ).resize(function() {
@@ -52,17 +55,20 @@ function plopImg(event)
     context.drawImage(imageObj, x - 200, y - 200);
   };
 
-var rng = (Math.floor((Math.random() * 150) + 1))   
- if (rng == 150){
+var rng = (Math.floor((Math.random() * 30000) + 1)) 
+    if (rng == 30000){
+    imageObj.src = 'images/joba.jpg';
+    neckSound.play();
+}   else if (rng >= 29799 && rng <= 29999 ){
 	imageObj.src = 'images/dumbass.jpg';
 	kevinSound.play();
- }  else if (rng == 149) {
+ }  else if (rng >= 29599 && rng <= 29798) {
     imageObj.src = 'images/bath.jpg';
     menSound.play();
- }  else if (rng == 148) {
+ }  else if (rng >= 29399 && rng <= 29598) {
     imageObj.src = 'images/somerlyn.png';
     hondaSound.play();
- }  else if (rng >= 120 && rng <= 147){
+ }  else if (rng >= 23999 && rng <= 29398){
     imageObj.src = 'images/kids.jpg';
     kidsSound.play();
  }  else {
