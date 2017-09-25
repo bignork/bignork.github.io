@@ -62,7 +62,7 @@ var rng = (Math.floor((Math.random() * 150) + 1))
  }  else if (rng == 148) {
     imageObj.src = 'images/somerlyn.png';
     hondaSound.play();
- }  else if (rng >= 110 && rng <= 147){
+ }  else if (rng >= 120 && rng <= 147){
     imageObj.src = 'images/kids.jpg';
     kidsSound.play();
  }  else {
