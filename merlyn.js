@@ -6,8 +6,11 @@ canvas.addEventListener("mousedown", plopImg, false);
 var sound = new Howl({
   urls: ['audio/honey.mp3']
 });
-var altSound = new Howl({
+var kevinSound = new Howl({
   urls: ['audio/head.mp3']
+});
+var menSound = new Howl({
+  urls: ['audio/men.mp3']
 });
 
 
@@ -42,13 +45,18 @@ function plopImg(event)
   imageObj.onload = function() {
     context.drawImage(imageObj, x - 200, y - 200);
   };
- if ((Math.floor((Math.random() * 15) + 1)) == 15){
+
+var rng = (Math.floor((Math.random() * 100) + 1))   
+ if (rng == 100){
 	imageObj.src = 'images/dumbass.jpg';
-	altSound.play();
- } else {
-	imageObj.src = 'images/merlyn.jpg';
-	sound.play();
- }
+	kevinSound.play();
+ } else if (rng >= 85 && rng <= 99) {
+	imageObj.src = 'images/bath.jpg';
+	menSound.play();
+} else {
+    imageObj.src = 'images/merlyn.jpg';
+    sound.play();
+}
 
 }
 
