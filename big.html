@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background: url("images/whataburger.jpg");
+    background-size: 1920px 1080px
+}
+</style>
+
+
+<script>
+var snd = new Audio
+snd.src = 'audio/honey.mp3'
+
+document.addEventListener('click', function(e) {
+    e = e || window.Event;
+    var tag2 = document.createElement('snd');
+    tag2.src = snd.src;
+    this.body.appendChild(tag2);
+} false);
+</script>
+
+
+<script>
+var img = new Image;
+img.src = 'images/merlyn.jpg';
+
+document.addEventListener('click',function(e) {
+    e = e || window.event;
+    var tag = document.createElement('img');
+    tag.src = img.src;
+    tag.style.position = 'absolute';
+    tag.style.height = '180px';
+    tag.style.width = '180px';
+    tag.style.top = (e.clientY) + 'px';
+    tag.style.left = (e.clientX) + 'px';
+    this.body.appendChild(tag);
+}, false);
+</script>
+</head>
+</html>
