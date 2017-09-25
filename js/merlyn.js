@@ -3,7 +3,7 @@ var context = canvas.getContext('2d');
 canvas.addEventListener("mousedown", plopImg, false);
 
 
-var sound = new Howl({
+var honeySound = new Howl({
   urls: ['audio/honey.mp3']
 });
 var kevinSound = new Howl({
@@ -11,6 +11,12 @@ var kevinSound = new Howl({
 });
 var menSound = new Howl({
   urls: ['audio/men.mp3']
+});
+var hondaSound = new Howl({
+  urls: ['audio/honda.mp3']
+});
+var kidsSound = new Howl({
+  urls: ['audio/kids.mp3']
 });
 
 
@@ -46,16 +52,22 @@ function plopImg(event)
     context.drawImage(imageObj, x - 200, y - 200);
   };
 
-var rng = (Math.floor((Math.random() * 100) + 1))   
- if (rng == 100){
+var rng = (Math.floor((Math.random() * 150) + 1))   
+ if (rng == 150){
 	imageObj.src = 'images/dumbass.jpg';
 	kevinSound.play();
- } else if (rng >= 85 && rng <= 99) {
-	imageObj.src = 'images/bath.jpg';
-	menSound.play();
-} else {
+ }  else if (rng == 149) {
+    imageObj.src = 'images/bath.jpg';
+    menSound.play();
+ }  else if (rng == 148) {
+    imageObj.src = 'images/somerlyn.png';
+    hondaSound.play();
+ }  else if (rng >= 110 && rng <= 147){
+    imageObj.src = 'images/kids.jpg';
+    kidsSound.play();
+ }  else {
     imageObj.src = 'images/merlyn.jpg';
-    sound.play();
+    honeySound.play();
 }
 
 }
